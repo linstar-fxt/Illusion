@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.linstar.illusion.mixin",
+  "plugin": "me.linstar.illusion.until.IllusionMixinPlugin",
+  "compatibilityLevel": "JAVA_16",
+  "refmap": "illusion.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "BaseBlockStateAccessor",
+    "BaseBlockStateMixin",
+    "BlockEntityRenderDispatcherMixin",
+    "BlockRenderDispatcherMixin",
+    "ClientLevelMixin",
+    "IndiumBlockRenderInfoMixin",
+    "IndiumTerrainRenderContextMixin",
+    "SodiumBlockRenderMixin",
+    "SodiumChunkBuilderMeshingTaskMixin",
+    "SodiumWorldRenderMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
