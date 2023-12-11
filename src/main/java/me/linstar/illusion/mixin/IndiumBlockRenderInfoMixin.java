@@ -16,6 +16,9 @@ public class IndiumBlockRenderInfoMixin {
 
     @Inject(method = "shouldDrawFace", at = @At("HEAD"), cancellable = true)
     public void shouldDrawFace(Direction face, CallbackInfoReturnable<Boolean> info){
+        if (face == null){
+            return;
+        }
         BlockPos pos = new BlockPos(blockPos.getX(), blockPos.getY(), blockPos.getZ());
         if (Until.isIllusionBlock(pos.offset(new BlockPos(face.getNormal()))) || Until.isIllusionBlock(blockPos)){
             info.setReturnValue(true);
