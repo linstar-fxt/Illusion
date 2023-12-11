@@ -38,7 +38,7 @@ public class SodiumBlockRenderMixin {
     @Redirect(method = "renderModel", at = @At(value = "INVOKE", target = "Lme/jellysquid/mods/sodium/client/render/chunk/compile/pipeline/BlockRenderer;isFaceVisible(Lme/jellysquid/mods/sodium/client/render/chunk/compile/pipeline/BlockRenderContext;Lnet/minecraft/core/Direction;)Z"))
     public boolean isFaceVisible(BlockRenderer instance, BlockRenderContext ctx, Direction face){
         BlockPos pos = ctx.pos();
-        if (Until.isIllusionBlock(pos.offset(new BlockPos(face.getNormal()))) || Until.isIllusionBlock(pos)){
+        if ((face != null && Until.isIllusionBlock(pos.offset(new BlockPos(face.getNormal())))) || Until.isIllusionBlock(pos)){
             return true;
         }
 
